@@ -1,3 +1,8 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+val jar: Jar by tasks
+val bootJar: BootJar by tasks
+
 plugins {
     kotlin("jvm") version "1.6.0"
     kotlin("plugin.spring") version "1.6.0"
@@ -16,6 +21,9 @@ repositories {
 allprojects {
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
+
+    jar.enabled = false
+    bootJar.enabled = true
 
     dependencies {
         val akkaVersion = "2.6.17"
