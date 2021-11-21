@@ -1,0 +1,32 @@
+### RHCP 티켓 등록
+POST http://localhost:5000/events/RHCP
+Content-Type: application/json
+
+{
+  "tickets": 10
+}
+
+### DjMadlib 티켓 등록
+POST http://localhost:5000/events/DjMadlib
+Content-Type: application/json
+
+{
+  "tickets": 10
+}
+
+### 모든 티켓 보기
+GET http://localhost:5000/events
+
+### RHCP 티켓 보기
+GET http://localhost:5000/events/RHCP
+
+### RHCP 티켓 구매
+POST http://localhost:5000/events/RHCP/tickets
+Content-Type: application/json
+
+{
+  "tickets": 1
+}
+
+### RHCP 티켓 판매 중단
+DELETE http://localhost:5000/events/RHCP

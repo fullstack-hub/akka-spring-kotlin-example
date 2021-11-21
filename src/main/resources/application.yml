@@ -1,0 +1,9 @@
+server:
+  port: 5000
+
+akka:
+  stream:
+    alpakka:
+      spring:
+        web:
+          actor-system-name: SpringWebAkkaStreamsSystem
