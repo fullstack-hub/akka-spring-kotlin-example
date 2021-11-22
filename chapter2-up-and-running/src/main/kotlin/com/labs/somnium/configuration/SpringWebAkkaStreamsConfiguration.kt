@@ -21,12 +21,12 @@ import java.time.Duration
 class SpringWebAkkaStreamsConfiguration(
     val properties: SpringWebAkkaStreamsProperties
 ) {
-    private val system: ActorSystem<Void>
+    private val system: ActorSystem<Any>
     private lateinit var boxOffice: ActorRef<BoxOffice.Command>
 
     init {
         val registry = ReactiveAdapterRegistry.getSharedInstance()
-        val rootBehavior = Behaviors.setup { context: ActorContext<Void> ->
+        val rootBehavior = Behaviors.setup { context: ActorContext<Any> ->
             boxOffice = context.spawn(BoxOffice.create(), "boxOffice")
             Behaviors.empty()
         }
