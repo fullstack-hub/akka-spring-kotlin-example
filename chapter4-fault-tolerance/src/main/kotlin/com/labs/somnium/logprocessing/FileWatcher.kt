@@ -23,7 +23,6 @@ class FileWatcher(
                 .onFailure(CorruptedFileException::class.java, SupervisorStrategy.resume()),
             LogProcessor.name
         )
-
         context.watch(logProcessor)
     }
 

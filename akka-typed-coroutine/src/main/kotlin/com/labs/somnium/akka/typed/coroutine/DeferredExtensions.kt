@@ -1,4 +1,4 @@
-package com.labs.somnium.extensions
+package com.labs.somnium.akka.typed.coroutine
 
 import kotlinx.coroutines.Deferred
 import java.util.concurrent.TimeoutException

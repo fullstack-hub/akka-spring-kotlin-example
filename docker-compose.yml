@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  mysql:
+    image: "mysql:8.0.26"
+    cap_add:
+      - ALL
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    volumes:
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d

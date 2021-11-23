@@ -1,9 +1,11 @@
-package com.labs.somnium
+package com.labs.somnium.example.app.controller
 
 import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
 import com.labs.somnium.akka.typed.coroutine.ask
 import com.labs.somnium.akka.typed.coroutine.awaitAllNotTimeout
+import com.labs.somnium.example.app.behavior.BoxOffice
+import com.labs.somnium.example.app.behavior.TicketSeller
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

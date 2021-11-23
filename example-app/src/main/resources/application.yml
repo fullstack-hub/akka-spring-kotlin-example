@@ -1,0 +1,9 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost/akka
+    username: mysqluser
+    password: mysqlpw
+    pool:
+      enabled: true
+      initial-size: 10
+      max-size: 10

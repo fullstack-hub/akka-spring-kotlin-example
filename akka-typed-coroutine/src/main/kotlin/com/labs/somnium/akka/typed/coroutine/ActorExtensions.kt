@@ -1,4 +1,4 @@
-package com.labs.somnium.extensions
+package com.labs.somnium.akka.typed.coroutine
 
 import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
@@ -14,8 +14,8 @@ import javax.annotation.PostConstruct
 private lateinit var extensions: ActorExtensions
 
 @Component
-private class ActorExtensions(
-    val actorSystem: ActorSystem<Void>,
+class ActorExtensions(
+    val actorSystem: ActorSystem<Any>,
     val askTimeout: Duration,
 ) {
     @PostConstruct

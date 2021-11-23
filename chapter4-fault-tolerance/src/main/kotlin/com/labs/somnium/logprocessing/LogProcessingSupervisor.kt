@@ -19,10 +19,9 @@ class LogProcessingSupervisor(
 
     init {
         sources.forEach {
-            val fileWatcher = context.spawn(
+            val fileWatcher = context.spawnAnonymous(
                 Behaviors.supervise(FileWatcher.create(it, databaseUrls))
-                    .onFailure(DiskError::class.java, SupervisorStrategy.stop()),
-                "fileWatcher"
+                    .onFailure(DiskError::class.java, SupervisorStrategy.stop())
             )
             context.watch(fileWatcher)
             fileWatchers.add(fileWatcher)
